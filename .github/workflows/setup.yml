@@ -33,6 +33,9 @@ jobs:
           mkdir -p /tmp/yamp-project
 
           unzip -q "${{ steps.zip.outputs.file }}" -d /tmp/yamp-project
+
+          rm -f /tmp/yamp-project/.github/workflows/build-apk.yml
+
           cp -a /tmp/yamp-project/. .
 
           rm -f "${{ steps.zip.outputs.file }}"
