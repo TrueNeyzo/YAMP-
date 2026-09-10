@@ -5,6 +5,8 @@
     <application
         android:allowBackup="true"
         android:label="YAMP"
+        android:icon="@drawable/yamp_icon"
+        android:roundIcon="@drawable/yamp_icon"
         android:theme="@style/Theme.YAMP"
         android:usesCleartextTraffic="false">
         <activity
