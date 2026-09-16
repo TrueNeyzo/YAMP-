@@ -1,0 +1,8 @@
+YAMP Android File Support V2
+
+Backup import no longer relies on WebChromeClient/onShowFileChooser inside the APK.
+The Backup button calls NativeFiles.openBackupPicker() directly, Android opens ACTION_OPEN_DOCUMENT,
+reads the selected JSON (max 20 MB), and hands it back to the existing YAMP backup validator/importer.
+Browser behavior remains unchanged and still uses <input type=file>.
+
+Export/download support from V1 remains present.
