@@ -1,0 +1,17 @@
+YAMP Android File Support test build
+
+Changes in MainActivity.kt only:
+- Android system file picker for HTML <input type="file"> (Backup/artist import).
+- Android ACTION_CREATE_DOCUMENT bridge for blob: downloads (Backup JSON, Error Journal TXT, artist export).
+- Android DownloadManager handling for normal http/https downloads (Jamendo).
+- No broad storage permission added.
+- YAMP HTML itself was not modified by this Android-shell patch.
+
+Test checklist:
+1. Backup -> Export: Android Save dialog opens and JSON is written.
+2. Backup -> Import: Android file picker opens; choose the exported JSON; YAMP receives it.
+3. Error Journal -> Save TXT: Android Save dialog opens and TXT is written.
+4. My Artists export/import JSON if used.
+5. Jamendo download: Android DownloadManager starts the download.
+
+Note: this project still builds assembleDebug and still uses the existing test versionCode/versionName. Permanent release signing/updater is a later step.
